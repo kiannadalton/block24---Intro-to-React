@@ -46,6 +46,16 @@ const state = {
  * and itemToFilter and returns an array of objects filtered by that criteria
  */
 
+function filterList(list) {
+  return (key, itemToFilter) => {
+    return list.filter((item) => item[key] !== itemToFilter);
+  };
+}
+
+//tests
+// console.log(filterList(state.people)("id", 4));
+// console.log(filterList(state.people)("name", "Luna"));
+
 /**
  * 👉 STEP 2: Create a function called converter with the following attributes
  *
@@ -53,6 +63,12 @@ const state = {
  * @param {Number} rate - conversion rate
  * @returns {Number} - converted number
  */
+
+function converter(input, rate) {
+  //.toFixed(x) the x will say how many decimal places we go to
+  // parseFloat since it's not a whole number
+  return parseFloat((input * rate).toFixed(2));
+}
 
 /**
  * 👉 STEP 3: Create a function called milesToYards with the following attributes
@@ -63,6 +79,13 @@ const state = {
  * @returns {Number} - converted number
  */
 
+function milesToYards(input) {
+  return converter(input, 1760);
+}
+
+// test
+// console.log(milesToYards(2));
+
 /**
  * 👉 STEP 4: Create a function called lbsToKg with the following attributes
  *
@@ -71,6 +94,13 @@ const state = {
  * @param {Number} input - number to convert
  * @returns {Number} - converted number
  */
+
+function lbsToKg(input) {
+  return converter(input, 0.453592);
+}
+
+//test
+// console.log(lbsToKg(10));
 
 /**
  * 👉 STEP 4: Create a function called convertMilesFilterByYards with the following attributes
@@ -81,6 +111,16 @@ const state = {
  * @param {Number} yards - number of yards to filter by
  * @returns {object[]} - an array of objects filtered by yards provided
  */
+
+function convertMilesFilterByYards(list, yards) {
+  const newList = list.map((item) => {
+    item.yards = milesToYards(item.distance);
+    return item;
+  });
+  return filterList(newList)("yards", yards);
+}
+
+console.log(convertMilesFilterByYards(state.people, 1760));
 
 /**
  *  What are the 5 most frequent words that appear in state.words, and how many times do they each appear?
@@ -116,17 +156,17 @@ function getTokenFrequency(list) {
   return list.reduce(getFrequency, {});
 }
 
-// const freq = getTokenFrequency(state.words);
+const freq = getTokenFrequency(state.words);
 
-// const sortedTokens = Object.entries(freq).sort((t1, t2) => {
-//   return t2[1] - t1[1];
-// });
+const sortedTokens = Object.entries(freq).sort((t1, t2) => {
+  return t2[1] - t1[1];
+});
 
-// console.log(
-//   `The 5 most frequent words and their frequencies are: \n${sortedTokens
-//     .slice(0, 5)
-//     .join("\n")}`
-// );
+console.log(
+  `The 5 most frequent words and their frequencies are: \n${sortedTokens
+    .slice(0, 5)
+    .join("\n")}`
+);
 
 module.exports = {
   filterList,

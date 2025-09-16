@@ -90,3 +90,6 @@ console.log("--- getClosestWordByLength ---");
 console.log("bed", getClosestWordByLength("hi", words, 3));
 console.log("hi", getClosestWordByLength("hi", words, 0));
 console.log("fence", getClosestWordByLength("rivers", words, 2));
+
+const textarea = document.getElementById("textarea")
+

@@ -10,7 +10,7 @@ const {
 
 let list;
 
-describe("filterList", () => {
+describe.only("filterList", () => {
   beforeEach(() => {
     list = fullList;
   });
@@ -70,7 +70,7 @@ describe("filterList", () => {
   });
 });
 
-describe("milesToYards", () => {
+describe.only("milesToYards", () => {
   beforeEach(() => {
     list = fullList;
   });
@@ -84,7 +84,7 @@ describe("milesToYards", () => {
   });
 });
 
-describe("lbsToKg", () => {
+describe.only("lbsToKg", () => {
   beforeEach(() => {
     list = fullList;
   });
@@ -98,7 +98,7 @@ describe("lbsToKg", () => {
   });
 });
 
-describe("convertMilesFilterByYards", () => {
+describe.only("convertMilesFilterByYards", () => {
   beforeEach(() => {
     list = fullList;
   });
@@ -126,7 +126,7 @@ describe("convertMilesFilterByYards", () => {
   });
 });
 
-describe("getTokenFrequency", () => {
+describe.only("getTokenFrequency", () => {
   test("returns an object of frequencies", () => {
     const freq = getTokenFrequency(tokens);
 
