@@ -13,4 +13,4 @@ While completing the guided practice, there were two areas with learning lessons
 
 ## Demonstrates use of:
 
-Higher order functions, currying, partial application, .reduce, .filter, .slice, .map, .sort, Object.entries, .join, .split, .length, for loop, for...of loop, if/else, .toLowerCase(), template literals, .includes, arrays, objects, array of objects
+Higher order functions, currying, partial application, .reduce, .filter, .slice, .map, .sort, Object.entries, .join, .split, .length, for loop, for...of loop, if/else, .toLowerCase(), template literals, .includes, arrays, objects, array of objects, ternary operator

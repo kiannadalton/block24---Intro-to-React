@@ -1,6 +1,3 @@
-const TODO = () => {};
-// Note: There are some simple test cases at the bottom of this file!
-
 /**
  * @param {string[]} topics - an array of topic words
  * @param {string} sentence - a space-separated string of words
@@ -24,8 +21,10 @@ const isRelevant = (topics, sentence) => {
  *  and returns whether it is relevant to `topics`
  */
 
-// TODO: make sure to add isRelevant within code
-const about = () => {};
+//* Completed
+const about = (topics) => {
+  return (sentence) => isRelevant(topics, sentence);
+};
 
 /**
  * @param {(sentence: string) => boolean} criterion - a function that
@@ -33,16 +32,21 @@ const about = () => {};
  * @param {string[]} sentences - an array of space-separated strings of words
  * @returns {string[]} the subset of `sentences` for which `criterion` returns true
  */
-// TODO:
-const getRelevantSentences = () => {};
+//* Completed
+const getRelevantSentences = (criterion, sentences) => {
+  // filters through the array of sentences, filter checks to see if each sentence contains any of the topics. Returns true, if yes. Filters out if no.
+  return sentences.filter(criterion);
+};
 
 /**
  * @param {string} str1 - the first string to compare
  * @param {string} str2 - the second string to compare
  * @returns {number} the absolute difference in length between `str1` and `str2`
  */
-// TODO:
-const getDistanceByLength = () => {};
+//* Completed
+const getDistanceByLength = (str1, str2) => {
+  return Math.abs(str1.length - str2.length);
+};
 
 /**
  * @param {string} word - the original string
@@ -54,8 +58,21 @@ const getDistanceByLength = () => {};
  *  as calculated by `distanceFn`, unless that distance is strictly greater than
  *  the `threshold`, in which case the original `word` is returned.
  */
-// TODO:
-const getClosestWord = () => {};
+//* Completed
+const getClosestWord = (word, words, distanceFn, threshold) => {
+  let closestWord = "";
+  for (let index of words) {
+    let wordDistance = distanceFn(word, index);
+    if (closestWord == "") {
+      closestWord = index;
+    } else if (wordDistance < distanceFn(word, closestWord)) {
+      closestWord = index;
+    }
+  }
+
+  const result = distanceFn(word, closestWord) > threshold ? word : closestWord;
+  return result;
+};
 
 /**
  * @param {string} word - the original string
@@ -65,8 +82,10 @@ const getClosestWord = () => {};
  *  unless that distance is strictly greater than the `threshold`,
  *  in which case the original `word` is returned.
  */
-// TODO:
-const getClosestWordByLength = () => {};
+//* Completed
+const getClosestWordByLength = (word, words, threshold) => {
+  return getClosestWord(word, words, getDistanceByLength, threshold);
+};
 
 /* === Simple Test Cases === */
 // The provided logs print the expected output first.
@@ -106,5 +125,3 @@ console.log("--- getClosestWordByLength ---");
 console.log("bed", getClosestWordByLength("hi", words, 3));
 console.log("hi", getClosestWordByLength("hi", words, 0));
 console.log("fence", getClosestWordByLength("rivers", words, 2));
-
-const textarea = document.getElementById("textarea");
