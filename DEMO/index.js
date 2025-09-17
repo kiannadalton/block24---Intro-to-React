@@ -157,6 +157,7 @@ function getTokenFrequency(list) {
 }
 
 const freq = getTokenFrequency(state.words);
+console.log("freq", freq);
 
 const sortedTokens = Object.entries(freq).sort((t1, t2) => {
   return t2[1] - t1[1];

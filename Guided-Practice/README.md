@@ -20,12 +20,3 @@ The `solution` branch contains a possible solution to this guided practice.
 8. What are the 5 most frequent tokens that appear in the text, and how many times do they each appear?
 9. What are the 5 most frequent characters that appear in the text, and how many times do they each appear?
 10. How many tokens do not contain any vowels?
-
-## Extensions
-
-These prompts are entirely optional but make for great practice!
-
-1. What is the most frequent vowel in the text?
-2. If a token were to be randomly picked, what is the probability that token contains a vowel?
-3. What is the mean and standard deviation of the number of vowels in each token?
-4. This will require getting external data. What percentage of the tokens are verbs?
