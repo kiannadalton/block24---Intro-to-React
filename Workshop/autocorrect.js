@@ -1,4 +1,4 @@
-const TODO = "REPLACE ME!!!";
+const TODO = () => {};
 // Note: There are some simple test cases at the bottom of this file!
 
 /**
@@ -6,14 +6,26 @@ const TODO = "REPLACE ME!!!";
  * @param {string} sentence - a space-separated string of words
  * @returns {boolean} whether `sentence` contains any of the words in `topics`
  */
-const isRelevant = TODO;
+
+//* Completed
+const isRelevant = (topics, sentence) => {
+  const splitSentence = sentence.split(" ");
+  for (let i = 0; i < topics.length; i++) {
+    if (splitSentence.includes(topics[i])) {
+      return true;
+    }
+  }
+  return false;
+};
 
 /**
  * @param {string[]} topics - an array of topic words
  * @returns {(sentence: string) => boolean} a function that takes a sentence
  *  and returns whether it is relevant to `topics`
  */
-const about = TODO;
+
+// TODO: make sure to add isRelevant within code
+const about = () => {};
 
 /**
  * @param {(sentence: string) => boolean} criterion - a function that
@@ -21,14 +33,16 @@ const about = TODO;
  * @param {string[]} sentences - an array of space-separated strings of words
  * @returns {string[]} the subset of `sentences` for which `criterion` returns true
  */
-const getRelevantSentences = TODO;
+// TODO:
+const getRelevantSentences = () => {};
 
 /**
  * @param {string} str1 - the first string to compare
  * @param {string} str2 - the second string to compare
  * @returns {number} the absolute difference in length between `str1` and `str2`
  */
-const getDistanceByLength = TODO;
+// TODO:
+const getDistanceByLength = () => {};
 
 /**
  * @param {string} word - the original string
@@ -40,7 +54,8 @@ const getDistanceByLength = TODO;
  *  as calculated by `distanceFn`, unless that distance is strictly greater than
  *  the `threshold`, in which case the original `word` is returned.
  */
-const getClosestWord = TODO;
+// TODO:
+const getClosestWord = () => {};
 
 /**
  * @param {string} word - the original string
@@ -50,7 +65,8 @@ const getClosestWord = TODO;
  *  unless that distance is strictly greater than the `threshold`,
  *  in which case the original `word` is returned.
  */
-const getClosestWordByLength = TODO;
+// TODO:
+const getClosestWordByLength = () => {};
 
 /* === Simple Test Cases === */
 // The provided logs print the expected output first.
@@ -91,5 +107,4 @@ console.log("bed", getClosestWordByLength("hi", words, 3));
 console.log("hi", getClosestWordByLength("hi", words, 0));
 console.log("fence", getClosestWordByLength("rivers", words, 2));
 
-const textarea = document.getElementById("textarea")
-
+const textarea = document.getElementById("textarea");
